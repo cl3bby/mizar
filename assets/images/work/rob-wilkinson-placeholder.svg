@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" role="img" aria-label="Rob Wilkinson Building concept redesign placeholder">
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#C4CDCA" stroke-width="1" opacity="0.45"/>
+    </pattern>
+  </defs>
+  <rect width="1000" height="720" fill="#E4E8E6"/>
+  <rect width="1000" height="720" fill="url(#grid)"/>
+  <rect x="28" y="28" width="944" height="664" fill="none" stroke="#003934" stroke-width="2" opacity="0.35"/>
+  <text x="500" y="330" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="210" fill="#003934" opacity="0.9">+</text>
+  <text x="500" y="420" text-anchor="middle" font-family="Verdana, Arial, sans-serif" font-size="38" font-weight="700" fill="#003934" letter-spacing="2">IN PROGRESS</text>
+  <text x="500" y="470" text-anchor="middle" font-family="Verdana, Arial, sans-serif" font-size="19" fill="#465651" letter-spacing="4">PREVIEW COMING SOON</text>
+</svg>

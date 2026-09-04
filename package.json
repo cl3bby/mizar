@@ -7,9 +7,5 @@
   },
   "devDependencies": {
     "serve": "^14.2.3"
-  },
-  "dependencies": {
-    "bootstrap": "^5.3.3",
-    "jquery": "^3.6.3"
   }
 }

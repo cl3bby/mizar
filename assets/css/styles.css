@@ -1,6 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
+/* Fonts are loaded via <link> in the HTML head (see preconnect + stylesheet tags). */
 /*!
  * Bootstrap  v5.3.6 (https://getbootstrap.com/)
  * Copyright 2011-2025 The Bootstrap Authors
@@ -20738,26 +20737,12 @@ textarea.form-control-lg {
   background-color: var(--bs-primary) !important;
 }
 
-.team:hover .team-img {
-  filter: grayscale(100%);
-}
-
-.customer-bg-img {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
 .accordion .accordion-item .accordion-button:not(.collapsed) {
   box-shadow: unset;
   background-color: var(--bs-light);
 }
 .accordion .accordion-item .collapse.show .accordion-body {
   background-color: var(--bs-light);
-}
-
-.awards-card:hover .awards-title {
-  color: var(--bs-primary);
 }
 
 .get-in-touch {
@@ -20960,4 +20945,208 @@ ul {
 
 [data-bs-theme=dark] .bg-gradient-shaph::before {
   background: radial-gradient(42% 55% at 18% 40%, rgba(127, 197, 184, 0.16) 0%, rgba(127, 197, 184, 0) 100%), radial-gradient(38% 50% at 82% 45%, rgba(224, 179, 106, 0.13) 0%, rgba(224, 179, 106, 0) 100%);
+}
+
+/* ==========================================================================
+   caleb.rocks — custom layer
+   Everything above this banner is the compiled Bootstrap theme + template
+   styles. New/rebranded styles live below so they stay diffable and greppable.
+   ========================================================================== */
+
+/* ---- Self-hosted fonts (assets/fonts/) — no Google Fonts request ---- */
+
+@font-face {
+  font-family: "Inter Tight";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/inter-tight-var.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Inter Tight";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/inter-tight-italic-var.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Serif";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/instrument-serif.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Serif";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/instrument-serif-italic.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ---- Inline SVG icon system (replaces Iconify CDN runtime) ---- */
+
+.icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: -0.125em;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+svg.btn-icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---- Vanilla scroll-reveal (drop-in for AOS, honours data-aos attrs) ----
+   Scoped to html:not(.no-js) so content never hides when JS is unavailable. */
+
+html:not(.no-js) [data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-duration: 0.7s;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+html:not(.no-js) [data-aos="fade-up"] {
+  transform: translateY(24px);
+}
+
+html:not(.no-js) [data-aos="fade-down"] {
+  transform: translateY(-24px);
+}
+
+html:not(.no-js) [data-aos="zoom-in"] {
+  transform: scale(0.96);
+}
+
+html:not(.no-js) [data-aos].aos-animate {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---- Anchor offset so the fixed pill header doesn't cover section tops ---- */
+
+section[id] {
+  scroll-margin-top: 96px;
+}
+
+/* ---- Keyboard focus: restore a visible ring (template reset kills it) ---- */
+
+:focus-visible {
+  outline: 3px solid var(--bs-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.btn:focus-visible,
+.nav-link:focus-visible,
+.accordion-button:focus-visible {
+  outline-offset: 1px;
+}
+
+/* ---- "Who I help" marquee: text pills instead of fake logos ---- */
+
+.marquee-content {
+  animation-duration: 42s;
+}
+
+.marquee-tag {
+  width: auto;
+}
+
+.marquee-tag:hover {
+  transform: none;
+}
+
+.marquee-label {
+  display: inline-block;
+  padding: 0.55rem 1.4rem;
+  border: 1px solid var(--bs-gray-300);
+  border-radius: 50rem;
+  background-color: var(--bs-white);
+  color: var(--bs-gray-700);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  white-space: nowrap;
+}
+
+/* ---- Final CTA band: brand tints instead of template pastels ---- */
+
+.get-in-touch {
+  background: linear-gradient(90deg, #CCD7D6 0%, #FAFBFA 33.23%, #FAFBFA 65.77%, #F3E8D6 100%);
+}
+
+/* ---- Process steps: large serif numerals ---- */
+
+.step-number {
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--bs-primary);
+}
+
+/* ---- Work cards: one-line context under the title ---- */
+
+.work .work-details .work-desc {
+  color: var(--bs-body-color);
+  max-width: 34rem;
+}
+
+/* ---- Fixed corner widget: keep clear of the footer on small screens ---- */
+
+.get-template .get-template-link {
+  text-decoration: none;
+}
+
+/* ---- Form success note (contact.html ?sent=1) ---- */
+
+.form-success {
+  border: 1px solid var(--bs-success-border-subtle);
+  background-color: var(--bs-success-bg-subtle);
+  color: #133224;
+  border-radius: var(--bs-border-radius);
+  padding: 1rem 1.25rem;
+}
+
+/* ---- Reduced motion: freeze the marquee, drop reveals, calm everything ---- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .marquee-content {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
 }
