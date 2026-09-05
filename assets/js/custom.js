@@ -114,4 +114,87 @@
       block: "center"
     });
   }
+
+  /* ---- Debug banner (?debug=1) ----
+     On-device diagnostics for load problems: JS errors, failed resources,
+     and a watchdog naming anything still stalled after 15s. Add ?debug=1 to
+     any page URL. Dormant otherwise; vanilla ES5, no dependencies. */
+  if (window.location.search.indexOf("debug=1") !== -1) {
+    var dbgBox = document.createElement("div");
+    var dbgLines = [];
+    var dbgLoaded = false;
+
+    dbgBox.setAttribute(
+      "style",
+      "position:fixed;top:0;left:0;right:0;z-index:2147483647;" +
+        "background:#111;color:#7cff7c;font:11px/1.5 monospace;" +
+        "padding:8px 10px;max-height:45%;overflow:auto;white-space:pre-wrap;" +
+        "word-break:break-all;border-bottom:2px solid #7cff7c"
+    );
+
+    function dbgLog(msg) {
+      dbgLines.push("[" + Math.round(performance.now()) + "ms] " + msg);
+      dbgBox.textContent = dbgLines.join("\n");
+    }
+
+    function dbgTargetName(t) {
+      if (!t) return "unknown";
+      var url = t.src || t.href || "";
+      return (t.tagName || "?").toLowerCase() + " " + String(url).split("/").pop();
+    }
+
+    window.addEventListener(
+      "error",
+      function (e) {
+        if (e.target && e.target !== window) {
+          dbgLog("RESOURCE FAILED: " + dbgTargetName(e.target));
+        } else {
+          dbgLog(
+            "JS ERROR: " +
+              (e.message || "unknown") +
+              (e.filename
+                ? " @" + String(e.filename).split("/").pop() + ":" + e.lineno
+                : "")
+          );
+        }
+      },
+      true
+    );
+
+    document.body.appendChild(dbgBox);
+    dbgLog("debug active");
+
+    window.addEventListener("load", function () {
+      dbgLoaded = true;
+      dbgLog(
+        "LOAD FIRED — " +
+          performance.getEntriesByType("resource").length +
+          " resources done"
+      );
+    });
+
+    window.setTimeout(function () {
+      if (dbgLoaded) return;
+      var done = {};
+      var pending = [];
+
+      performance.getEntriesByType("resource").forEach(function (r) {
+        done[r.name] = true;
+      });
+
+      document
+        .querySelectorAll("script[src], link[href], img[src]")
+        .forEach(function (n) {
+          var url = n.src || n.href;
+          if (url && !done[url] && String(url).indexOf("data:") !== 0) {
+            pending.push(dbgTargetName(n));
+          }
+        });
+
+      dbgLog(
+        "STILL WAITING after 15s — stalled: " +
+          (pending.length ? pending.join(", ") : "(nothing identifiable)")
+      );
+    }, 15000);
+  }
 })();

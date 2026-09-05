@@ -12,10 +12,12 @@ Static marketing site for Caleb's freelance web-design business. Plain HTML/CSS/
 - `contact.html` — enquiry form (FormSubmit) + quick FAQ
 - `404.html`, `privacy-policy.html`, `terms-and-conditions.html`
 - `assets/css/styles.css` — compiled Bootstrap theme with the brand palette. **Do not redo the colour palette.** Custom caleb.rocks styles live in the clearly-marked "caleb.rocks — custom layer" block at the END of the file. Edit styles there, not in the compiled section above.
-- `assets/js/custom.js` — vanilla JS: fixed header, scroll-spy, scroll-to-top, scroll-reveal (honours existing `data-aos` attributes), contact-form success note
+- `assets/js/custom.js` — vanilla JS: fixed header, scroll-spy, scroll-to-top, scroll-reveal (honours existing `data-aos` attributes), contact-form success note, `?debug=1` diagnostic banner (on-device error/stalled-resource log — add the query param to any page URL)
 - `assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js` — the only JS dependency (offcanvas + accordion)
+- `assets/fonts/` — self-hosted WOFF2s (Inter Tight variable + italic, Instrument Serif + italic). `@font-face` rules live in the styles.css custom layer; the two above-the-fold faces are preloaded in every page head. No Google Fonts requests anywhere.
+- `_headers` — Cloudflare cache rules: fonts/images/libs cached 1 year immutable, CSS/JS 1 day. 404.html uses absolute (`/assets/...`) paths because it's served at arbitrary URLs
 - Icons are an inline SVG sprite defined at the top of each page's `<body>` (`.icon` class, sized via Bootstrap `fs-*` utilities)
-- Work images: `brellark-mockup.png` + `elite-torque-mockup.png` are live; `rob-wilkinson-placeholder.svg` is held for when the RW concept card returns
+- Work images: `brellark-mockup.webp` + `elite-torque-mockup.webp` (WebP, ~28 + ~55 KB); `rob-wilkinson-placeholder.svg` is held for when the RW concept card returns. `apple-touch-icon.png` in `assets/images/logos/` was rasterised from `favicon.svg` on a `#003934` ground
 
 ## Hard rules
 
