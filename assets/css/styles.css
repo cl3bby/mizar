@@ -21093,27 +21093,11 @@ section[id] {
   background: linear-gradient(90deg, #CCD7D6 0%, #FAFBFA 33.23%, #FAFBFA 65.77%, #F3E8D6 100%);
 }
 
-/* ---- Process steps: large serif numerals ---- */
-
-.step-number {
-  font-family: "Instrument Serif", serif;
-  font-style: italic;
-  font-size: 3.5rem;
-  line-height: 1;
-  color: var(--bs-primary);
-}
-
 /* ---- Work cards: one-line context under the title ---- */
 
 .work .work-details .work-desc {
   color: var(--bs-body-color);
   max-width: 34rem;
-}
-
-/* ---- Fixed corner widget: keep clear of the footer on small screens ---- */
-
-.get-template .get-template-link {
-  text-decoration: none;
 }
 
 /* ---- Form success note (contact.html ?sent=1) ---- */
@@ -21148,5 +21132,361 @@ section[id] {
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.75rem;
+  }
+}
+:root {
+  /* Topographic contour pattern — shared by the hero glow and the About
+     photo backdrop. Single source of truth. */
+  --topo: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%201200%20900%22%20width=%221200%22%20height=%22900%22%20fill=%22none%22%20stroke=%22%23003934%22%20stroke-width=%221.6%22%20opacity=%220.085%22%3E%3Cpath%20d=%22M849,300%20L849,305%20L847,310%20L845,315%20L843,319%20L840,323%20L838,327%20L835,332%20L833,336%20L831,341%20L828,345%20L824,349%20L820,352%20L816,355%20L811,357%20L806,358%20L800,359%20L795,360%20L790,361%20L785,361%20L779,361%20L774,361%20L768,360%20L763,358%20L757,356%20L752,354%20L747,351%20L742,348%20L738,344%20L734,339%20L732,334%20L731,328%20L731,321%20L732,315%20L734,310%20L737,305%20L738,300%20L740,296%20L740,291%20L741,287%20L741,282%20L742,278%20L743,273%20L745,269%20L748,265%20L751,261%20L755,258%20L758,254%20L761,250%20L765,246%20L769,242%20L773,238%20L778,235%20L784,232%20L790,231%20L796,231%20L802,232%20L808,233%20L813,236%20L819,239%20L823,243%20L827,247%20L830,252%20L833,257%20L834,263%20L836,268%20L838,273%20L839,277%20L842,281%20L844,285%20L847,290%20L848,295%20Z%22/%3E%3Cpath%20d=%22M910,300%20L910,310%20L907,321%20L902,330%20L896,339%20L891,347%20L886,356%20L882,364%20L878,374%20L873,383%20L867,392%20L860,400%20L852,407%20L842,412%20L832,415%20L822,418%20L811,420%20L801,422%20L790,423%20L779,424%20L768,425%20L757,424%20L746,422%20L735,419%20L724,415%20L713,410%20L703,404%20L693,397%20L684,389%20L676,380%20L671,368%20L669,356%20L670,344%20L673,331%20L677,320%20L682,309%20L686,300%20L689,291%20L690,282%20L690,273%20L691,264%20L693,255%20L695,245%20L700,237%20L705,229%20L712,222%20L718,215%20L725,207%20L732,199%20L739,190%20L747,182%20L756,174%20L767,167%20L778,162%20L790,160%20L802,159%20L815,161%20L826,164%20L838,169%20L848,175%20L858,183%20L865,192%20L872,203%20L876,214%20L880,224%20L883,235%20L886,244%20L890,253%20L895,262%20L900,271%20L905,280%20L909,290%20Z%22/%3E%3Cpath%20d=%22M971,300%20L970,316%20L966,331%20L958,345%20L950,358%20L942,371%20L935,383%20L928,397%20L922,411%20L915,425%20L906,439%20L896,451%20L883,461%20L869,469%20L853,474%20L838,478%20L822,481%20L806,484%20L790,486%20L774,488%20L757,488%20L740,487%20L723,484%20L706,480%20L690,474%20L673,466%20L658,458%20L642,448%20L629,435%20L618,421%20L610,404%20L607,385%20L609,366%20L613,347%20L621,330%20L628,314%20L634,300%20L638,287%20L640,274%20L641,260%20L642,246%20L644,232%20L648,218%20L655,205%20L663,193%20L672,182%20L682,172%20L692,160%20L702,148%20L713,135%20L725,121%20L739,109%20L754,98%20L772,91%20L790,87%20L809,86%20L827,89%20L845,94%20L862,101%20L878,111%20L892,123%20L904,137%20L913,153%20L920,170%20L926,186%20L930,202%20L935,217%20L940,230%20L947,243%20L955,256%20L963,270%20L969,284%20Z%22/%3E%3Cpath%20d=%22M1032,300%20L1031,321%20L1024,341%20L1015,360%20L1003,378%20L992,394%20L983,411%20L974,429%20L966,448%20L957,467%20L945,485%20L931,502%20L914,515%20L895,525%20L875,533%20L854,538%20L833,542%20L811,545%20L790,549%20L768,551%20L746,552%20L723,551%20L700,547%20L678,541%20L655,533%20L634,523%20L612,512%20L592,498%20L574,482%20L559,462%20L549,439%20L545,414%20L547,388%20L554,363%20L564,340%20L574,319%20L583,300%20L588,282%20L591,265%20L592,247%20L593,228%20L596,209%20L601,191%20L610,174%20L621,158%20L634,144%20L647,129%20L659,114%20L673,97%20L687,79%20L703,61%20L721,44%20L742,29%20L765,19%20L790,14%20L815,13%20L840,16%20L864,23%20L887,33%20L908,46%20L927,62%20L943,81%20L955,103%20L964,126%20L971,148%20L977,169%20L983,189%20L990,207%20L1000,224%20L1010,241%20L1021,259%20L1029,279%20Z%22/%3E%3Cpath%20d=%22M1093,300%20L1091,326%20L1083,352%20L1071,375%20L1056,397%20L1042,418%20L1030,439%20L1020,461%20L1010,484%20L999,509%20L985,532%20L967,553%20L946,570%20L922,582%20L896,591%20L870,598%20L843,603%20L817,607%20L790,611%20L762,614%20L734,616%20L706,614%20L677,610%20L649,602%20L621,593%20L594,581%20L567,566%20L541,549%20L518,528%20L499,504%20L487,475%20L482,444%20L485,411%20L495,379%20L508,350%20L521,324%20L532,300%20L540,278%20L543,256%20L544,234%20L545,211%20L548,187%20L555,164%20L565,143%20L579,123%20L595,105%20L611,87%20L627,67%20L643,46%20L661,23%20L681,0%20L704,-22%20L730,-40%20L759,-53%20L790,-60%20L822,-61%20L853,-57%20L883,-49%20L912,-36%20L939,-19%20L962,1%20L982,26%20L997,53%20L1008,82%20L1016,110%20L1023,137%20L1030,161%20L1040,184%20L1052,205%20L1065,226%20L1078,249%20L1088,274%20Z%22/%3E%3Cpath%20d=%22M1154,300%20L1152,332%20L1142,362%20L1127,390%20L1109,416%20L1092,441%20L1077,466%20L1065,493%20L1053,521%20L1040,550%20L1024,578%20L1003,604%20L977,624%20L948,639%20L917,650%20L886,658%20L854,664%20L822,669%20L790,674%20L757,678%20L723,680%20L689,678%20L654,673%20L620,664%20L586,653%20L553,638%20L521,621%20L489,601%20L461,576%20L439,546%20L424,511%20L419,473%20L423,433%20L435,395%20L452,360%20L469,328%20L483,300%20L492,274%20L496,248%20L496,221%20L497,193%20L501,165%20L509,137%20L521,112%20L538,88%20L557,67%20L576,45%20L595,21%20L614,-5%20L635,-32%20L659,-61%20L686,-88%20L718,-110%20L753,-126%20L790,-135%20L828,-136%20L866,-132%20L903,-121%20L938,-106%20L970,-85%20L998,-60%20L1021,-30%20L1039,3%20L1052,38%20L1062,72%20L1069,105%20L1077,134%20L1089,161%20L1103,186%20L1120,212%20L1136,239%20L1148,269%20Z%22/%3E%3Cpath%20d=%22M1031,640%20L1032,645%20L1032,649%20L1032,654%20L1031,659%20L1030,663%20L1029,668%20L1027,673%20L1025,678%20L1023,683%20L1020,687%20L1016,692%20L1012,696%20L1008,699%20L1003,702%20L997,704%20L992,706%20L986,707%20L980,707%20L974,707%20L968,706%20L963,704%20L958,701%20L954,697%20L950,692%20L947,687%20L944,683%20L942,678%20L939,675%20L935,671%20L932,668%20L928,664%20L925,660%20L923,655%20L921,650%20L921,645%20L922,640%20L923,635%20L924,630%20L926,625%20L927,621%20L928,616%20L930,611%20L932,607%20L935,602%20L938,598%20L942,595%20L946,591%20L950,588%20L954,585%20L959,582%20L964,580%20L969,578%20L974,577%20L980,576%20L986,577%20L991,578%20L996,579%20L1002,580%20L1008,581%20L1013,583%20L1018,585%20L1023,589%20L1027,593%20L1030,598%20L1031,604%20L1031,610%20L1031,616%20L1030,622%20L1030,627%20L1030,631%20L1030,636%20Z%22/%3E%3Cpath%20d=%22M1077,640%20L1079,649%20L1080,658%20L1079,667%20L1078,676%20L1076,685%20L1073,694%20L1070,703%20L1066,712%20L1062,722%20L1056,731%20L1050,740%20L1042,748%20L1033,754%20L1024,760%20L1013,764%20L1002,767%20L991,768%20L980,769%20L969,769%20L958,767%20L947,763%20L938,757%20L929,749%20L923,740%20L917,730%20L912,721%20L907,713%20L901,706%20L894,700%20L887,694%20L880,686%20L874,678%20L870,669%20L868,660%20L868,650%20L869,640%20L871,630%20L874,621%20L876,612%20L878,603%20L881,594%20L884,585%20L888,576%20L894,568%20L900,560%20L907,553%20L915,547%20L923,540%20L931,535%20L940,529%20L949,524%20L959,521%20L969,519%20L980,518%20L991,519%20L1001,520%20L1012,522%20L1022,524%20L1033,527%20L1044,530%20L1054,535%20L1063,541%20L1070,550%20L1075,560%20L1078,571%20L1078,583%20L1077,595%20L1076,605%20L1075,615%20L1075,623%20L1076,632%20Z%22/%3E%3Cpath%20d=%22M1123,640%20L1125,653%20L1127,666%20L1126,679%20L1124,693%20L1121,706%20L1117,719%20L1112,733%20L1107,746%20L1101,761%20L1093,775%20L1084,788%20L1072,800%20L1059,810%20L1045,818%20L1029,824%20L1013,828%20L997,831%20L980,832%20L963,831%20L947,828%20L931,822%20L917,813%20L905,801%20L895,787%20L887,773%20L880,760%20L872,748%20L864,738%20L854,728%20L843,719%20L833,709%20L824,697%20L817,684%20L814,669%20L814,655%20L816,640%20L819,626%20L823,612%20L827,599%20L830,585%20L834,572%20L839,558%20L845,545%20L853,533%20L862,522%20L872,512%20L883,502%20L895,493%20L907,484%20L920,476%20L934,469%20L949,463%20L964,460%20L980,459%20L996,460%20L1011,462%20L1027,465%20L1043,468%20L1058,472%20L1074,477%20L1090,483%20L1103,493%20L1114,506%20L1122,521%20L1125,538%20L1125,556%20L1124,573%20L1121,589%20L1119,603%20L1119,615%20L1121,628%20Z%22/%3E%3Cpath%20d=%22M1168,640%20L1171,657%20L1173,674%20L1173,692%20L1170,709%20L1166,727%20L1161,744%20L1155,762%20L1148,781%20L1140,800%20L1130,818%20L1117,836%20L1102,852%20L1085,865%20L1066,876%20L1045,884%20L1024,890%20L1002,893%20L980,895%20L958,895%20L936,890%20L915,882%20L897,869%20L881,853%20L868,835%20L857,816%20L847,798%20L838,782%20L827,769%20L814,756%20L800,744%20L786,731%20L774,715%20L765,698%20L761,679%20L760,659%20L763,640%20L768,621%20L773,603%20L778,586%20L782,568%20L787,550%20L793,532%20L801,515%20L812,499%20L824,484%20L838,470%20L852,457%20L868,445%20L884,434%20L901,423%20L919,413%20L939,406%20L959,401%20L980,400%20L1001,401%20L1022,404%20L1042,408%20L1063,412%20L1084,417%20L1105,423%20L1126,432%20L1144,445%20L1158,462%20L1168,482%20L1172,505%20L1172,529%20L1170,552%20L1166,572%20L1163,591%20L1163,608%20L1165,624%20Z%22/%3E%3Cpath%20d=%22M1212,640%20L1216,661%20L1219,682%20L1219,704%20L1216,726%20L1211,748%20L1204,770%20L1197,792%20L1189,815%20L1179,839%20L1167,862%20L1151,885%20L1133,905%20L1111,921%20L1087,935%20L1062,945%20L1035,952%20L1008,957%20L980,959%20L952,958%20L925,953%20L899,942%20L876,926%20L856,906%20L840,882%20L827,858%20L816,836%20L804,816%20L790,799%20L774,784%20L756,769%20L739,753%20L723,733%20L713,712%20L707,688%20L707,664%20L710,640%20L716,617%20L723,595%20L729,573%20L734,551%20L740,528%20L748,506%20L758,484%20L771,464%20L786,446%20L803,429%20L821,413%20L840,398%20L860,383%20L881,369%20L904,357%20L928,348%20L954,342%20L980,341%20L1006,342%20L1032,346%20L1058,350%20L1084,355%20L1110,361%20L1137,369%20L1162,380%20L1185,396%20L1203,417%20L1214,443%20L1220,472%20L1219,502%20L1215,530%20L1210,556%20L1207,579%20L1206,600%20L1208,620%20Z%22/%3E%3C/svg%3E");
+}
+
+/* ---- Hero + page background: filter-free (replaces the template's blur(200px)) ----
+   The compiled theme's .bg-gradient-shaph::before painted radial gradients over
+   a full-viewport pseudo-element with filter: blur(200px). In practice that
+   filter froze iOS WebKit's first paint for 60-100 seconds (bisected and
+   confirmed on-device — the load event stayed pinned until the blur finished),
+   was silently dropped by desktop WebKit, and clamped to nothing in Chromium
+   at mobile sizes. It is replaced by:
+   - all pages: one soft green wash that dissolves mid-section (no boundary
+     ever meets a gradient edge);
+   - the hero (index): a faint topographic contour pattern (inline SVG
+     data-URI, ~8 KB, no requests) over the wash, masked to fade out at the
+   bottom of the hero so it dissolves in open space. Contours are generated
+   (two "peaks", seeded wobble), strokes in the brand green at 8.5% opacity.
+   No filters anywhere; static; reduced-motion irrelevant. */
+
+.bg-gradient-shaph::before {
+  top: 0;
+  left: 0;
+  background: radial-gradient(
+    75% 55% at 22% 28%,
+    rgba(145, 190, 178, 0.3) 0%,
+    rgba(145, 190, 178, 0) 65%
+  );
+  filter: none;
+}
+
+.banner-section.bg-gradient-shaph::before {
+  top: 0;
+  left: 0;
+  background:
+    var(--topo) 88% 0% / 1150px auto no-repeat,
+    radial-gradient(
+      75% 55% at 22% 28%,
+      rgba(145, 190, 178, 0.3) 0%,
+      rgba(145, 190, 178, 0) 65%
+    );
+  -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent 78%);
+  mask-image: linear-gradient(to bottom, #000 30%, transparent 78%);
+  filter: none;
+}
+
+/* ---- Scroll-to-top button ----
+   The compiled theme ships #scrollToTopBtn display:none and relied on the
+   template's jQuery to show it; custom.js now toggles .visible on scroll. */
+
+#scrollToTopBtn.visible {
+  display: flex;
+}
+
+/* ---- Add-ons rate card (pricing section) ---- */
+
+.rate-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bs-secondary-color);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  margin-bottom: 0.25rem;
+}
+
+.rate-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 0.875rem;
+}
+
+.rate-list li:last-child {
+  border-bottom: 0;
+}
+
+.rate-price {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.rate-quoted {
+  font-style: italic;
+  color: var(--bs-secondary-color);
+  white-space: nowrap;
+}
+
+/* ---- Why-lightweight: measured comparison bars ----
+   Bars sit at their final width by default; the reveal system (html:not(.no-js)
+   + .aos-animate) starts them at zero and fills them when scrolled into view. */
+
+.compare-track {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-top: 0.375rem;
+}
+
+.compare-bar {
+  height: 1.25rem;
+  border-radius: 999px;
+  width: var(--w, 0%);
+  flex-shrink: 0;
+  transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html:not(.no-js) .compare-panel:not(.aos-animate) .compare-bar {
+  width: 0;
+}
+
+.compare-ours {
+  background: var(--bs-primary);
+}
+
+.compare-typical {
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.compare-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.compare-val {
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.compare-dot {
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  margin: 0 0.25rem 0 0.5rem;
+  vertical-align: 1px;
+}
+
+.compare-dot-ours {
+  background: var(--bs-primary);
+}
+
+.compare-dot-typical {
+  background: rgba(0, 0, 0, 0.18);
+}
+
+/* ---- Process: vertical timeline ----
+   The rail draws downward (scaleY) when the timeline's wrapper reveals.
+   Static under html.no-js and prefers-reduced-motion. */
+
+.timeline {
+  position: relative;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.timeline-rail {
+  position: absolute;
+  left: 19px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  border-radius: 1px;
+  background: rgba(0, 57, 52, 0.18);
+  transform: scaleY(1);
+  transform-origin: top center;
+}
+
+html:not(.no-js) .timeline .timeline-rail {
+  transition: transform 1.4s ease 0.2s;
+}
+
+html:not(.no-js) .timeline:not(.aos-animate) .timeline-rail {
+  transform: scaleY(0);
+}
+
+.timeline-step {
+  position: relative;
+  padding-left: 64px;
+  padding-bottom: 2.75rem;
+}
+
+.timeline-step:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-node {
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bs-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  box-shadow: 0 0 0 6px var(--bs-light);
+}
+
+/* ---- New section motion: reduced-motion must degrade to final states ---- */
+@media (prefers-reduced-motion: reduce) {
+  .compare-bar,
+  .timeline-rail {
+    transition: none !important;
+  }
+}
+
+/* ---- About: arch portrait photo with contour backdrop ----
+   Backdrop panel sits offset behind the photo (zero-overflow offsets) and
+   reuses the hero's --topo pattern. The photo frame is a 3:4 arch; until a
+   real photo lands it holds a neutral placeholder. */
+
+.about-photo-wrap {
+  position: relative;
+  max-width: 380px;
+  margin: 0 auto 1.5rem;
+}
+
+.about-photo-backdrop {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  right: 0;
+  bottom: 0;
+  border-radius: var(--bs-border-radius);
+  background:
+    var(--topo) right bottom / 700px auto no-repeat,
+    radial-gradient(
+      80% 60% at 30% 20%,
+      rgba(145, 190, 178, 0.35),
+      rgba(145, 190, 178, 0) 70%
+    ),
+    #f4f7f6;
+}
+
+.about-photo {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 3 / 4;
+  border-radius: 999px 999px var(--bs-border-radius) var(--bs-border-radius);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e4e8e6;
+  border: 1px solid rgba(0, 57, 52, 0.15);
+  box-shadow: 0 1.5rem 3rem rgba(0, 57, 52, 0.12);
+}
+
+.about-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-photo-hint {
+  font-size: 0.8125rem;
+  color: var(--bs-secondary-color);
+}
+
+.about-facts {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: 2.25rem;
+  background-color: var(--bs-light);
+  border-radius: var(--bs-border-radius);
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.about-facts-title {
+  grid-column: 1 / -1;
+  margin-bottom: 0.5rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bs-primary);
+  text-align: center;
+}
+
+.about-fact {
+  text-align: center;
+}
+
+.about-fact-number {
+  display: block;
+  color: var(--bs-primary);
+  font-weight: 600;
+  margin-bottom: 0.375rem;
+}
+
+@media (min-width: 992px) {
+  .about-facts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .about-fact {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .about-fact + .about-fact {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+
+/* ---- About photo: brand grade + grain ----
+   ::after — soft-light brand-green tint (a "duotone-lite" grade), easing
+   lighter on hover as a desktop garnish (static on touch).
+   ::before — faint fractal-noise grain + hairline white inner stroke.
+   Blend modes only — no filters, per the house rule. */
+
+.about-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: #003934;
+  mix-blend-mode: soft-light;
+  opacity: 0.35;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.about-photo:hover::after {
+  opacity: 0.12;
+}
+
+.about-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background-image: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22 stitchTiles=%22stitch%22/></filter><rect width=%22120%22 height=%22120%22 filter=%22url(%2523n)%22/></svg>");
+  background-size: 120px 120px;
+  opacity: 0.06;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-photo::after {
+    transition: none;
   }
 }

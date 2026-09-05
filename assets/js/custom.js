@@ -232,10 +232,39 @@
      permanently hidden. CSS lives in the caleb.rocks custom layer. */
   var revealEls = document.querySelectorAll("[data-aos]");
 
+  /* ---- Number count-up ([data-count]) ----
+     Runs when the sweep reveals an ancestor; final value shown instantly
+     under prefers-reduced-motion (and stays as-is with no JS). */
+  function runCountUp(el) {
+    if (el.getAttribute("data-count-run")) return;
+    el.setAttribute("data-count-run", "1");
+
+    var target = parseFloat(el.getAttribute("data-count"));
+    var decimals = parseInt(el.getAttribute("data-decimals") || "0", 10);
+
+    if (!isFinite(target) || prefersReducedMotion) {
+      el.textContent = target.toFixed(decimals);
+      return;
+    }
+
+    var started = null;
+    var duration = 900;
+
+    function frame(ts) {
+      if (started === null) started = ts;
+      var p = Math.min((ts - started) / duration, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = (target * eased).toFixed(decimals);
+      if (p < 1) rAF(frame);
+    }
+    rAF(frame);
+  }
+
   function revealAll() {
     revealEls.forEach(function (el) {
       el.classList.add("aos-animate");
     });
+    document.querySelectorAll("[data-count]").forEach(runCountUp);
   }
 
   function sweepReveals() {
@@ -254,6 +283,11 @@
         el.style.transitionDelay = delay + "ms";
       }
       el.classList.add("aos-animate");
+
+      var counters = el.querySelectorAll("[data-count]");
+      for (var ci = 0; ci < counters.length; ci++) {
+        runCountUp(counters[ci]);
+      }
     });
   }
 
@@ -313,6 +347,7 @@
       onHeaderScroll();
       navHighlighter();
       sweepReveals();
+      updateTopBtn();
     });
   }
 
@@ -358,11 +393,19 @@
   }
   dbgPhase("startup deferred (DOMContentLoaded + rAF)");
 
-  /* ---- Scroll to top corner button ---- */
-  var topBtn = document.getElementById("scrollToTopBtn");
+  /* ---- Scroll to top corner button ----
+     The compiled theme ships it display:none; the template's original
+     jQuery was what revealed it on scroll. We do the same ourselves:
+     .visible is toggled from the rAF scroll pass. */
+  var topBtnEl = document.getElementById("scrollToTopBtn");
 
-  if (topBtn) {
-    topBtn.addEventListener("click", function () {
+  function updateTopBtn() {
+    if (!topBtnEl) return;
+    topBtnEl.classList.toggle("visible", window.scrollY >= 400);
+  }
+
+  if (topBtnEl) {
+    topBtnEl.addEventListener("click", function () {
       window.scrollTo({
         top: 0,
         behavior: prefersReducedMotion ? "auto" : "smooth"
