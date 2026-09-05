@@ -11,9 +11,15 @@
 (function () {
   "use strict";
 
+  /* No-op unless the debug banner is active (reassigned below). Lets us
+     timestamp each startup phase anywhere in the script. */
+  var dbgPhase = function () {};
+
   /* ---- Debug banner (?debug=1) — installs FIRST so it survives later errors ----
      On-device diagnostics for load problems. Add ?debug=1 to any page URL:
      - JS errors (with source line) and failed resources, as they happen
+     - phase timestamps through script startup (a long gap between two phase
+       lines names the exact operation that froze the main thread)
      - readyState / visibility transitions (catches a locked phone mid-test)
      - a 2s sampler for up to 2 minutes: if sample timestamps GAP while the
        spinner hangs, the main thread is starved; if samples run steadily and
@@ -37,10 +43,14 @@
       dbgBox.textContent = dbgLines.join("\n");
     };
 
+    dbgPhase = function (name) {
+      dbgLog("phase → " + name);
+    };
+
     /* Pending = referenced by the document but not yet in resource timing.
        Icon links (favicon / apple-touch-icon) are counted separately, not
        flagged: WebKit fetches them out-of-process where resource timing
-       can't see them — prime suspects for a hung spinner with no errors. */
+       can't see them. */
     var dbgPending = function () {
       var finished = {};
       var pending = [];
@@ -112,6 +122,10 @@
 
     document.addEventListener("readystatechange", function () {
       dbgLog("readyState → " + document.readyState);
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      dbgPhase("DOMContentLoaded");
     });
 
     document.addEventListener("visibilitychange", function () {
@@ -198,6 +212,7 @@
   /* JS is running — removes the no-js guard so [data-aos] reveals can engage
      (see the custom layer in styles.css). */
   document.documentElement.classList.remove("no-js");
+  dbgPhase("no-js removed");
 
   var prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
@@ -258,6 +273,7 @@
   var sectionOffsets = [];
 
   function measureSections() {
+    dbgPhase("pre-measure-sections");
     sectionOffsets = [];
 
     sections.forEach(function (current) {
@@ -269,6 +285,8 @@
         )
       });
     });
+
+    dbgPhase("post-measure-sections");
   }
 
   function navHighlighter() {
@@ -308,18 +326,37 @@
   window.addEventListener("resize", settleLayout, { passive: true });
   window.addEventListener("load", settleLayout);
 
-  measureSections();
+  /* ---- Startup: ALL layout-touching work is deferred out of parse time ----
+     Forcing a layout synchronously mid-parse (offsetTop / rect reads while
+     the parser is still building the document) froze the main thread for
+     ~68 seconds on iOS WebKit with the full page. The first sweep, the
+     section measuring, and the first scroll pass now run in a rAF after
+     DOMContentLoaded, and again once fonts/images have settled. */
+  function startBehaviour() {
+    measureSections();
 
-  if (prefersReducedMotion) {
-    revealAll();
-  } else {
-    sweepReveals();
-    /* Re-sweep after fonts/images settle, in case layout shifted */
+    dbgPhase("pre-initial-sweep");
+    if (prefersReducedMotion) {
+      revealAll();
+    } else {
+      sweepReveals();
+    }
+    dbgPhase("post-initial-sweep");
+
+    onScroll();
+
     window.setTimeout(settleLayout, 300);
     window.setTimeout(settleLayout, 1200);
   }
 
-  onScroll();
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
+      rAF(startBehaviour);
+    });
+  } else {
+    rAF(startBehaviour);
+  }
+  dbgPhase("startup deferred (DOMContentLoaded + rAF)");
 
   /* ---- Scroll to top corner button ---- */
   var topBtn = document.getElementById("scrollToTopBtn");
@@ -348,4 +385,6 @@
       block: "center"
     });
   }
+
+  dbgPhase("script end");
 })();
