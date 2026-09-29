@@ -3,25 +3,20 @@
   <url>
     <loc>https://caleb.rocks/</loc>
     <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
   </url>
+
   <url>
-    <loc>https://caleb.rocks/contact.html</loc>
+    <loc>https://caleb.rocks/contact</loc>
     <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://caleb.rocks/privacy-policy.html</loc>
+    <loc>https://caleb.rocks/privacy-policy</loc>
     <lastmod>2026-09-04</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
+
   <url>
-    <loc>https://caleb.rocks/terms-and-conditions.html</loc>
+    <loc>https://caleb.rocks/terms-and-conditions</loc>
     <lastmod>2026-09-04</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
 </urlset>
