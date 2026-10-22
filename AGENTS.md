@@ -47,5 +47,6 @@ Cloudflare, built from the `astro` branch. Build command `bun run build`, output
 
 ## Notes
 
-- The template pulls fonts (rsms.me / Google Fonts), Alpine and a squircle worklet from third-party CDNs in `BaseHead.astro`. The old static site self-hosted everything and avoided third-party requests; moving these local is a known follow-up.
-- Italian (`it`) routes are still present. Remove them if the site should be English-only.
+- Fonts (Inter variable, JetBrains Mono), Alpine and the squircle paint worklet are self-hosted under `public/fonts` and `public/js`. Do not reintroduce third-party CDN requests or Google Fonts.
+- English only. The template's Italian locale was removed; do not re-add `/it` routes.
+- `public/_headers` sets Cloudflare cache rules (hashed assets/fonts/images 1 year, JS 1 day).
