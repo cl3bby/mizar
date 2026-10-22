@@ -1,15 +1,15 @@
 {
-	"name": "@majesticooss/mintaka",
+	"name": "@cl3bby/caleb.rocks",
 	"type": "module",
 	"version": "0.0.1",
 	"private": true,
-	"description": "majestico.co website",
+	"description": "caleb.rocks website",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/majesticooss/mintaka.git"
+		"url": "https://github.com/cl3bby/caleb.rocks.git"
 	},
-	"bugs": "https://github.com/majesticooss/mintaka/issues",
-	"homepage": "https://mintaka.co",
+	"bugs": "https://github.com/cl3bby/caleb.rocks/issues",
+	"homepage": "https://caleb.rocks",
 	"files": [
 		"*"
 	],

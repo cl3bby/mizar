@@ -1,20 +1,86 @@
 ---
 import Title from "@components/global/Title.astro";
-import { getLangFromUrl, useTranslations, useTranslatedPath } from "@i18n/utils";
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
-const translatePath = useTranslatedPath(lang);
 ---
 
 <section>
 	<div class="mx-auto max-w-7xl px-8 py-12 md:px-12 lg:px-32 lg:py-32">
 		<div>
-			<Title title="Privacy" subtitle="Last updated 01. Jan 2024" class="pb-10 pt-20 uppercase" />
+			<Title title="Privacy Policy" subtitle="Last updated 5 September 2026" class="pb-10 pt-20 uppercase" />
 		</div>
 		<div class="prose-styles mt-12 lg:mt-24">
-			<h2 id="shine-the-light-disclosure">{t("privacy.wip")}</h2>
-			<p>{t("privacy.wip.content")}</p>
+			<p>
+				This policy explains how personal information is handled by caleb.rocks — the freelance web design service operated by
+				<strong>Caleb Bruce Whittaker, sole trader (ABN 62 866 297 258)</strong>, based on the Granite Belt, Queensland, Australia ("I", "me",
+				"my").
+			</p>
+			<p>It's deliberately short and plain, because privacy policies shouldn't need a lawyer on standby.</p>
+
+			<h2>What information may be collected</h2>
+			<p>
+				If you contact me through the enquiry form, I may receive information such as your name, business name, email address, phone number and
+				message. When you visit the site, hosting and third-party service providers may also process technical information such as your IP
+				address, browser type, device information, request details and timestamps for purposes such as delivering the website, security and
+				troubleshooting.
+			</p>
+
+			<h2>What I do with it</h2>
+			<p>
+				I use it to reply to your enquiry and, if we end up working together, to deliver the services you asked for. I don't sell, rent or trade
+				your information, and I don't add you to any mailing list.
+			</p>
+
+			<h2>Who else sees it</h2>
+			<ul>
+				<li><strong>FormSubmit</strong> — processes information submitted through the enquiry form so it can be delivered to me.</li>
+				<li><strong>Cloudflare</strong> — hosts this website and, like all web hosts, keeps technical server logs (such as your IP address and browser) for security and troubleshooting.</li>
+			</ul>
+
+			<h2>Third-party and overseas processing</h2>
+			<p>
+				Some service providers used by this website operate internationally or may process information using infrastructure outside Australia.
+				Their handling of information is governed by their own privacy terms and applicable laws. I choose service providers with reasonable
+				regard to privacy and security and only use them where reasonably necessary to operate the website or provide services.
+			</p>
+
+			<h2>Tracking and cookies</h2>
+			<p>
+				This website does not intentionally set first-party advertising or analytics cookies and does not currently use behavioural advertising
+				or visitor-tracking analytics. Third-party services may process technical information as described above.
+			</p>
+
+			<h2>How long information is kept</h2>
+			<p>
+				Enquiry information is generally kept only for as long as reasonably needed to respond, manage a potential or actual client relationship,
+				maintain business records, resolve disputes and meet legal or tax obligations. Information that is no longer reasonably required may be
+				deleted or de-identified.
+			</p>
+
+			<h2>Access, correction and privacy concerns</h2>
+			<p>
+				You can contact me to ask what personal information I hold about you, request a correction, or ask for information to be deleted where
+				appropriate. I aim to handle personal information responsibly and consistently with applicable Australian privacy law. If you have a
+				concern, contact me first and I will try to resolve it promptly.
+			</p>
+
+			<h2>External links</h2>
+			<p>This site links to a small number of external sites (if any). Their privacy practices are their own — check their policies.</p>
+
+			<h2>Governing law</h2>
+			<p>
+				These terms are governed by the laws of Queensland, Australia. Subject to any rights that cannot lawfully be excluded, the parties submit
+				to the courts and tribunals having jurisdiction in Queensland.
+			</p>
+
+			<h2>Severability</h2>
+			<p>If any part of these terms is found to be invalid or unenforceable, the remaining terms continue to apply to the extent permitted by law.</p>
+
+			<h2>Changes to this policy</h2>
+			<p>
+				If this policy changes, the date at the top of this page changes with it. Material changes will be flagged on the home page.
+			</p>
+
+			<h2>Contact</h2>
+			<p>Questions about privacy? Email <a href="mailto:hello@caleb.rocks">hello@caleb.rocks</a>.</p>
 		</div>
 	</div>
 </section>

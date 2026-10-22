@@ -1,20 +1,14 @@
-name: Assertions and static report
+name: Lighthouse report
 
 on:
     workflow_dispatch:
-    push:
-        branches:
-            - main
-
-env:
-    PRIVJS_TOKEN: ${{ secrets.PRIVJS_TOKEN }}
 
 jobs:
-    test-and-deploy:
+    test:
         runs-on: ubuntu-latest
         timeout-minutes: 10
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
 
             - uses: oven-sh/setup-bun@v1
               with:
@@ -23,14 +17,8 @@ jobs:
             - name: Install dependencies
               run: bun install
 
-            - name: Install Global dependencies
-              run: bun install -g netlify-cli @unlighthouse/cli puppeteer
+            - name: Install Unlighthouse
+              run: bun install -g @unlighthouse/cli puppeteer
 
-            - name: Unlighthouse assertions and client
+            - name: Run Unlighthouse
               run: unlighthouse-ci
-
-            - name: Deploy
-              run: netlify deploy --dir=.unlighthouse --prod --message="New Release Deploy from GitHub Actions"
-              env:
-                  NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-                  NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

@@ -14,7 +14,20 @@ const translatePath = useTranslatedPath(lang);
 	</div>
 	<div class="mx-auto">
 		<Title class="pb-10 pt-20 uppercase" title={t("contact.title")} subtitle={t("contact.subtitle")} />
-		<form data-static-form-name="contact" class="mx-auto max-w-2xl pt-12 lg:pt-20">
+		<form
+			action="https://formsubmit.co/hello@caleb.rocks"
+			method="POST"
+			class="mx-auto max-w-2xl pt-12 lg:pt-20">
+			<input type="hidden" name="_subject" value="New website enquiry - caleb.rocks" />
+			<input type="hidden" name="_template" value="table" />
+			<input type="hidden" name="_next" value="https://caleb.rocks/contact?sent=1" />
+			<input type="hidden" name="_captcha" value="false" />
+			<p class="hidden" aria-hidden="true">
+				<label>Don't fill this in: <input type="text" name="_honey" tabindex="-1" autocomplete="off" /></label>
+			</p>
+			<p id="form-success" class="mb-8 rounded-lg bg-emerald-100 px-4 py-3 text-emerald-900" hidden>
+				Thanks — your enquiry has been sent. I'll get back to you shortly.
+			</p>
 			<div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
 				<div class="form-field sm:col-span-2">
 					<label for="name" class="form-label">{t("contact.name")}*</label>
@@ -27,6 +40,10 @@ const translatePath = useTranslatedPath(lang);
 				<div class="form-field sm:col-span-2">
 					<label for="company" class="form-label">{t("contact.company")}</label>
 					<input type="text" name="company" id="company" autocomplete="organization" />
+				</div>
+				<div class="form-field sm:col-span-2">
+					<label for="phone" class="form-label">Phone</label>
+					<input type="tel" name="phone" id="phone" autocomplete="tel" />
 				</div>
 				<div class="form-field sm:col-span-2">
 					<label for="message" class="form-label">{t("contact.message")}*</label>
@@ -88,3 +105,10 @@ const translatePath = useTranslatedPath(lang);
 		@apply pointer-events-auto relative m-0 w-full cursor-text rounded-lg border-0 bg-slate-200 px-5 py-2 text-xl font-normal not-italic outline-none placeholder:text-gray-400 focus:ring-slate-500;
 	}
 </style>
+
+<script is:inline>
+	if (new URLSearchParams(window.location.search).get("sent") === "1") {
+		const note = document.getElementById("form-success");
+		if (note) note.hidden = false;
+	}
+</script>

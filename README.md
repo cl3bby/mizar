@@ -1,42 +1,39 @@
-# [Mintaka](https://mintaka.majestico.co)
+# caleb.rocks
 
-<a href="https://astro.build/">![Astro](.github/images/astro-icon.png)</a>
-<a href="https://tailwindcss.com/">![Tailwind](.github/images/tailwind-icon.png)</a>
-<a href="https://gsap.com/">![Gsap](.github/images/gsap.png)</a>
+The caleb.rocks site — Astro + Tailwind + GSAP.
 
-Mintaka is a template made with [Astro](https://astro.build), [Tailwind](https://tailwindcss.com/) and [Gsap](https://gsap.com/)
+Based on the [Mintaka](https://github.com/majesticooss/mintaka) template (public domain / Unlicense), rebuilt as Caleb's own site.
 
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/majesticooss/mintaka)
+## Develop
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/majesticooss/mintaka)
+```sh
+bun install
+bun run dev
+```
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/majesticooss/mintaka)
+## Build
 
+```sh
+bun run build
+bun run preview
+```
 
-### [🧪 Site preview →](https://mintaka.majestico.co)
+Output is `dist/`.
 
-### [🧑‍🚀 Astro website →](https://astro.build/)
+## Structure
 
-### [🕮 Astro docs →](https://docs.astro.build/en/getting-started/)
+- `src/pages/` — routes (landing, blog, work, contact, legal, tags, author, RSS)
+- `src/components/` — landing sections, global chrome, blog + form components
+- `src/layouts/` — `BaseLayout` (chrome + SEO) and `MarkdownPostLayout`
+- `src/content/` — posts, projects, authors (Markdown/MDX collections)
+- `src/i18n/` — UI strings and locale helpers
+- `src/styles/` — global styles
+- `public/` — static assets, fonts, icons, manifest
 
----
+## Deploy
 
-## Preview
+Cloudflare, built from the `astro` branch. Build command `bun run build`, output directory `dist`.
 
-![Mintaka Preview](.github/images/majestico_share.gif)
+## Credits
 
-## 🧪 Test
-
-On the folder run
-
-1. `bun install`  <small>(or `yarn` or `pnpm i`)</small>
-2. `bun run dev`  <small>(or `yarn dev` or `pnpm dev`)</small>
-
-## ✅ Features
-
-- [x] Localization
-- [x] Blog
-
----
-
-<p align="right"><a href="https://majestico.co" target="_blank">majestico.co</p>
+Template: [Mintaka](https://github.com/majesticooss/mintaka) by Majestico (Unlicense).
