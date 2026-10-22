@@ -75,7 +75,7 @@ module.exports = {
 			},
 			fontFamily: {
 				display: ["Midnight", ...defaultTheme.fontFamily.sans],
-				sans: ["Inter", ...defaultTheme.fontFamily.sans],
+				sans: ["InterVariable", ...defaultTheme.fontFamily.sans],
 				mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
 			},
 		},
