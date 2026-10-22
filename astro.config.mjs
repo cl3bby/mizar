@@ -14,10 +14,6 @@ export default defineConfig({
 		},
 	},
 	site: "https://caleb.rocks",
-	i18n: {
-		defaultLocale: "en",
-		locales: ["en", "it"],
-	},
 	markdown: {
 		drafts: true,
 		shikiConfig: {

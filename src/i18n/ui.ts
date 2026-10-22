@@ -1,6 +1,5 @@
 export const languages = {
 	en: "English",
-	it: "Italiano",
 };
 
 export const defaultLang = "en";
@@ -15,14 +14,14 @@ export const ui = {
 		services: "Services",
 		homepage: "Home",
 		tagline:
-			"Fast, modern, low-maintenance websites for established regional businesses — designed, built and supported on the Granite Belt.",
+			"One person, start to finish — websites designed, built and cared for on the Granite Belt.",
 		"projects.yours": "Your project",
 		"projects.see": "See the project",
-		"hero.title.main": "I build",
-		"hero.title.1": "websites",
-		"hero.title.2": "redesigns",
-		"hero.title.3": "fast sites",
-		"hero.title.4": "that last",
+		"hero.title.main": "Websites that",
+		"hero.title.1": "load fast",
+		"hero.title.2": "last",
+		"hero.title.3": "get found",
+		"hero.title.4": "work",
 		"hero.subtitle":
 			"Fast, modern, low-maintenance websites for established regional Australian businesses — builders, mechanics, earthmoving, quarries and trades. Based on the Granite Belt, QLD.",
 		"hero.scroll": "scroll down to explore more",
@@ -91,92 +90,6 @@ export const ui = {
 		"footer.newsletter": "Start a",
 		"footer.newsletter2": "project",
 		"footer.yourmail": "Your email",
-	},
-	it: {
-		or: "o",
-		contact: "Contatti",
-		contacts: "Contatti",
-		contactus: "Mettiti in contatto",
-		projects: "Lavori",
-		services: "Servizi",
-		homepage: "Home",
-		tagline:
-			"Siti web veloci, moderni e facili da mantenere per imprese regionali consolidate — progettati, realizzati e seguiti nel Granite Belt.",
-		"projects.yours": "Il tuo progetto",
-		"projects.see": "Guarda il progetto",
-		"hero.title.main": "Realizzo",
-		"hero.title.1": "siti",
-		"hero.title.2": "redesign",
-		"hero.title.3": "siti veloci",
-		"hero.title.4": "che durano",
-		"hero.subtitle":
-			"Siti web veloci, moderni e facili da mantenere per imprese regionali australiane consolidate — costruttori, meccanici, movimento terra, cave e mestieri. Dal Granite Belt, Queensland.",
-		"hero.scroll": "scorri per scoprire di più",
-		"websites.title": "Siti web",
-		"apps.title": "Redesign",
-		"uiux.title": "Website Care",
-		"seo.title": "Fondamenta SEO",
-		"advertising.title": "Prestazioni",
-		"websites.content":
-			"Siti nuovi costruiti per velocità e chiarezza. Struttura pulita, testi sensati e una build che si carica in fretta su un telefono con segnale debole — perché è lì che si trova la maggior parte dei tuoi clienti.",
-		"apps.content":
-			"Se il sito attuale è lento, datato o difficile da aggiornare, posso ricostruirlo senza perdere i contenuti e la visibilità che hai già guadagnato.",
-		"uiux.content":
-			"Hosting, aggiornamenti, backup e piccole modifiche gestiti per te. A$69 al mese, o A$199 al trimestre, così il sito continua a funzionare dopo il lancio.",
-		"seo.content":
-			"Titoli, descrizioni, dati strutturati, sitemap e configurazione di Search Console fatti come si deve. Niente scorciatoie — solo le basi tecniche fatte correttamente.",
-		"advertising.content":
-			"Pagine leggere, immagini compresse e nessuno script di terze parti pesante. Il tipo di sito che si carica in fretta su una connessione regionale e non richiede una rifattura l'anno dopo.",
-		"privacy.wip": "Lavori in corso",
-		"privacy.wip.content": "Questa pagina verrà aggiornata a breve",
-		"faqs.question1": "Quanto costa un sito web?",
-		"faqs.answer1":
-			"Essential costa A$1,950 e Signature A$2,750. Ogni progetto viene quotato per iscritto prima di iniziare, così conosci ambito e prezzo in anticipo. Il lavoro extra è A$95 all'ora in incrementi di 30 minuti.",
-		"faqs.question2": "Quanto tempo serve?",
-		"faqs.answer2":
-			"Di solito da due a quattro settimane, a seconda della rapidità con cui arrivano foto, contenuti e feedback. I tempi sono concordati nel preventivo e si spostano se qualcosa cambia dalla tua parte.",
-		"faqs.question3": "Il sito sarà mio una volta finito?",
-		"faqs.answer3":
-			"Sì. Una volta pagata l'ultima fattura, possiedi i contenuti e il design creati per il tuo progetto e il diritto di usare il sito per la tua attività.",
-		"faqs.question4": "E per hosting e dominio?",
-		"faqs.answer4":
-			"L'hosting gira su Cloudflare e il dominio resta a tuo nome e sotto il tuo controllo. I costi di terze parti come la registrazione del dominio sono fatturati a costo.",
-		"faqs.question5": "Offri manutenzione continuativa?",
-		"faqs.answer5":
-			"Sì — Website Care costa A$69 al mese o A$199 al trimestre. Copre hosting, aggiornamenti, backup e piccole modifiche ai contenuti.",
-		"faqs.question6": "Puoi migliorare il sito esistente invece di rifarlo?",
-		"faqs.answer6":
-			"Spesso sì. Se il sito è solido alla base, un redesign può bastare. Se è lento o difficile da mantenere, rifarlo di solito costa meno nel tempo. Ti dirò onestamente quale dei due conviene.",
-		"faqs.question7": "Lavori solo con imprese del Granite Belt?",
-		"faqs.answer7":
-			"No. Sono basato nel Granite Belt ma lavoro a distanza con imprese regionali in tutta l'Australia. La maggior parte del processo avviene via email e telefono.",
-		"faqs.question8": "Usi dei template?",
-		"faqs.answer8":
-			"Uso componenti collaudati invece di partire da zero ogni volta. Questo mantiene la build leggera e affidabile, mentre design e contenuti sono su misura per la tua attività.",
-		"faqs.question9": "Di cosa hai bisogno da me?",
-		"faqs.answer9":
-			"Logo, foto, dettagli dei servizi e un'idea di cosa vuoi che facciano i clienti. Se non hai tutto, va bene — posso aiutarti a metterlo a fuoco.",
-		"faqs.question10": "Come iniziamo?",
-		"faqs.answer10":
-			"Invia una richiesta dal modulo di contatto o scrivi a hello@caleb.rocks. Faremo due chiacchiere gratuite e senza impegno, poi ti mando un preventivo scritto.",
-		"faq.otherquestions": "Altre domande?",
-		"thanks.subtitle": "Messaggio inviato",
-		"thanks.title": "Grazie",
-		"thanks.content": "Ti risponderò il prima possibile.",
-		"contact.title": "Contatti",
-		"contact.subtitle": "Raccontami della tua attività — ti rispondo personalmente.",
-		"contact.name": "Nome",
-		"contact.email": "Email",
-		"contact.message": "Messaggio",
-		"contact.company": "Nome dell'attività",
-		"contact.agree": "Inviando, accetti la mia",
-		"contact.send": "Invia",
-		"blog.title": "Note",
-		"blog.subtitle": "Web design, prestazioni e gestione di un piccolo studio.",
-		"blog.gotoproject": "Vai al progetto",
-		"footer.newsletter": "Inizia un",
-		"footer.newsletter2": "progetto",
-		"footer.yourmail": "La tua email",
 	},
 } as const;
 

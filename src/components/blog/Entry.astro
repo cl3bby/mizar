@@ -7,6 +7,17 @@ const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 
 const { title, url, author, pubDate, description, image, titleInside = false } = Astro.props;
+
+function formatDate(value: string | Date) {
+	return new Date(value).toLocaleDateString("en-AU", {
+		day: "numeric",
+		month: "long",
+		year: "numeric",
+		timeZone: "UTC",
+	});
+}
+
+const dateLabel = formatDate(pubDate);
 ---
 
 <a href={translatePath(url)} title={title} class="group">
@@ -39,7 +50,7 @@ const { title, url, author, pubDate, description, image, titleInside = false } =
 					</p>
 					<span aria-hidden="true">&middot;</span>
 					<div class={`flex text-xs ${titleInside ? "text-slate-300" : "text-slate-500"}`}>
-						<time datetime="2020-03-16">{pubDate}</time>
+						<time datetime={new Date(pubDate).toISOString().slice(0, 10)}>{dateLabel}</time>
 					</div>
 				</div>
 			</footer>

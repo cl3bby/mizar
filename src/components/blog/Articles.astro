@@ -25,8 +25,8 @@ const allPosts = (await getCollection("posts"))
 ---
 
 <section>
-	<div class="top-[-10rem]transform-gpu absolute inset-x-0 overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">
-		<div class="gradient-element"></div>
+	<div class="pointer-events-none absolute inset-x-0 top-[-10rem] -z-10 flex justify-center overflow-hidden sm:top-[-20rem]" aria-hidden="true">
+		<div class="h-[36rem] w-[72rem] max-w-none rounded-full bg-[radial-gradient(closest-side,rgba(162,212,160,0.30),transparent)]"></div>
 	</div>
 	<div class="mx-auto flex flex-col gap-16 px-8 py-24 md:px-12 lg:pt-32 2xl:max-w-7xl">
 		<!-- svg: first layer -->
@@ -43,7 +43,7 @@ const allPosts = (await getCollection("posts"))
 					title={allPosts[0].data.title}
 					description={allPosts[0].data.description}
 					alt={allPosts[0].data.title}
-					pubDate={allPosts[0].data.pubDate.toString().slice(0, 10)}
+					pubDate={allPosts[0].data.pubDate.toISOString()}
 					author={allPosts[0].data.author}
 					image={allPosts[0].data.image.source}
 					titleInside={false}
@@ -61,7 +61,7 @@ const allPosts = (await getCollection("posts"))
 							title={post.data.title}
 							description={post.data.description}
 							alt={post.data.title}
-							pubDate={post.data.pubDate.toString().slice(0, 10)}
+							pubDate={post.data.pubDate.toISOString()}
 							author={post.data.author}
 							image={post.data.image.source}
 						/>
@@ -72,27 +72,6 @@ const allPosts = (await getCollection("posts"))
 </section>
 
 <style>
-	.gradient-element {
-		@apply relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#a2d4a0] to-[#aac887] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem];
-		clip-path: polygon(
-			74.1% 44.1%,
-			100% 61.6%,
-			97.5% 26.9%,
-			85.5% 0.1%,
-			80.7% 2%,
-			72.5% 32.5%,
-			60.2% 62.4%,
-			52.4% 68.1%,
-			47.5% 58.3%,
-			45.2% 34.5%,
-			27.5% 76.7%,
-			0.1% 64.9%,
-			17.9% 100%,
-			27.6% 76.8%,
-			76.1% 97.7%,
-			74.1% 44.1%
-		);
-	}
 	.article-overlay {
 		background-repeat: no-repeat;
 		background-position: center;
