@@ -47,17 +47,17 @@
 }
 
 :root {
-	--astro-code-color-text: #ffffff;
-	--astro-code-color-background: #131313;
-	--astro-code-token-constant: #8b919b;
-	--astro-code-token-string: #ffffff;
-	--astro-code-token-comment: #8b919b;
-	--astro-code-token-keyword: #e83906;
-	--astro-code-token-parameter: #ffffff;
-	--astro-code-token-function: #ffffff;
-	--astro-code-token-string-expression: #c7f801;
-	--astro-code-token-punctuation: #ffffff;
-	--astro-code-token-link: #ffffff;
+	--astro-code-color-text: #d8e4de;
+	--astro-code-color-background: #153834;
+	--astro-code-token-constant: #9db5af;
+	--astro-code-token-string: #d8e4de;
+	--astro-code-token-comment: #7d968f;
+	--astro-code-token-keyword: #bd8d43;
+	--astro-code-token-parameter: #d8e4de;
+	--astro-code-token-function: #d8e4de;
+	--astro-code-token-string-expression: #bd8d43;
+	--astro-code-token-punctuation: #d8e4de;
+	--astro-code-token-link: #bd8d43;
 	--grid-gap: 4vw;
 	--base-padding-x: max(6vw, 60px);
 	--base-padding-y: clamp(30px, 4vw, 50px);
@@ -72,7 +72,8 @@
 
 html {
 	scrollbar-gutter: stable;
-	@apply overflow-x-hidden bg-slate-100 text-stone-900;
+	@apply overflow-x-hidden bg-brand-light text-brand-dark;
+	scroll-behavior: smooth;
 }
 
 /* Custom scrollbar */
@@ -86,14 +87,14 @@ html {
 	background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
-	background-color: #1b1816;
+	background-color: #153834;
 	border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-	background-color: #000;
+	background-color: #0e2a26;
 }
 .dark ::-webkit-scrollbar-thumb {
-	background-color: #e8e1e1;
+	background-color: #d8e4de;
 }
 .dark ::-webkit-scrollbar-thumb:hover {
 	background-color: #ffffff;
@@ -102,20 +103,20 @@ html {
 /* Selection */
 
 ::-moz-selection {
-	color: white;
-	background: orange;
+	color: #153834;
+	background: #bd8d43;
 }
 ::selection {
-	color: white;
-	background: orange;
+	color: #153834;
+	background: #bd8d43;
 }
 .dark ::-moz-selection {
-	color: orange;
-	background: white;
+	color: #153834;
+	background: #d8e4de;
 }
 .dark ::selection {
-	color: orange;
-	background: white;
+	color: #153834;
+	background: #d8e4de;
 }
 
 .select-none {
@@ -129,7 +130,7 @@ html {
 }
 
 .prose-styles {
-	@apply prose mx-auto max-w-3xl text-slate-500 prose-headings:font-bold prose-headings:tracking-tighter prose-headings:text-black prose-a:text-slate-500 hover:prose-a:text-black prose-blockquote:border-l-slate-950 prose-blockquote:text-slate-500 prose-code:text-black prose-pre:rounded-lg prose-li:marker:text-slate-500;
+	@apply prose mx-auto max-w-3xl text-brand-dark/70 prose-headings:font-bold prose-headings:tracking-tighter prose-headings:text-brand-dark prose-a:text-brand-dark/70 hover:prose-a:text-brand-accent prose-blockquote:border-l-brand-accent prose-blockquote:text-brand-dark/70 prose-code:text-brand-dark prose-pre:rounded-lg prose-li:marker:text-brand-accent;
 }
 
 .section {
@@ -151,27 +152,27 @@ html {
 .squircle-bg {
 	--squircle-smooth: 1;
 	--squircle-radius: 10px;
-	background: #272521;
+	background: #153834;
 	mask-image: paint(squircle);
 }
 
 .squircle-bg-white {
 	--squircle-smooth: 1;
 	--squircle-radius: 10px;
-	background: #fff;
+	background: #d8e4de;
 	mask-image: paint(squircle);
 }
 
 .squircle-hover:hover {
 	--squircle-smooth: 1;
 	--squircle-radius: 10px;
-	background: #272521;
+	background: #153834;
 	mask-image: paint(squircle);
 }
 
 .squircle-white-hover:hover {
 	--squircle-smooth: 1;
 	--squircle-radius: 10px;
-	background: #fff;
+	background: #d8e4de;
 	mask-image: paint(squircle);
 }

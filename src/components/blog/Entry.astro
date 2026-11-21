@@ -31,7 +31,7 @@ const dateLabel = formatDate(pubDate);
 		</div>
 		<div
 			class={`flex w-full flex-1 flex-col items-start justify-between  ${
-				titleInside ? "absolute bottom-0 text-white p-12" : "text-black pt-4 md:p-2 md:pt-6"
+				titleInside ? "absolute bottom-0 text-brand-light p-12" : "text-brand-dark pt-4 md:p-2 md:pt-6"
 			}`}>
 			<div class="w-full">
 				<div>
@@ -39,17 +39,17 @@ const dateLabel = formatDate(pubDate);
 						{title}
 					</p>
 				</div>
-				<p class={`mt-2 line-clamp-3 text-base  ${titleInside ? "text-slate-200" : "text-slate-600"}`}>
+				<p class={`mt-2 line-clamp-3 text-base  ${titleInside ? "text-brand-light/80" : "text-brand-dark/70"}`}>
 					{description}
 				</p>
 			</div>
 			<footer>
 				<div class="mt-6 inline-flex items-center space-x-1">
-					<p class={`text-xs font-medium ${titleInside ? "text-slate-200" : "text-slate-900"}`}>
+					<p class={`text-xs font-medium ${titleInside ? "text-brand-light/80" : "text-brand-dark"}`}>
 						{author.name}
 					</p>
 					<span aria-hidden="true">&middot;</span>
-					<div class={`flex text-xs ${titleInside ? "text-slate-300" : "text-slate-500"}`}>
+					<div class={`flex text-xs ${titleInside ? "text-brand-light/70" : "text-brand-dark/70"}`}>
 						<time datetime={new Date(pubDate).toISOString().slice(0, 10)}>{dateLabel}</time>
 					</div>
 				</div>

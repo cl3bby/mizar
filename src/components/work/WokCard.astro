@@ -18,11 +18,11 @@ const { image, project, link, description, class: className } = Astro.props;
 			<h3 class="font-mono text-lg font-medium uppercase tracking-wide md:mt-0 lg:text-xl">
 				{project}
 			</h3>
-			<span class="text-right text-base hover:text-primary-700">
+			<span class="text-right text-base hover:text-brand-accent">
 				<span class="hidden lg:inline-block">{t("projects.see")}</span>
 				<span class="sr-only">{project}</span> &nbsp; &rarr;
 			</span>
 		</a>
-		{description && <p class="mt-8 line-clamp-2 text-sm text-slate-500">{description}</p>}
+		{description && <p class="mt-8 line-clamp-2 text-sm text-brand-dark/70">{description}</p>}
 	</div>
 </li>

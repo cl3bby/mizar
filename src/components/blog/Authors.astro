@@ -29,10 +29,10 @@ const allAuthors = (await getCollection("authors"))
 			<Title class="pb-10 pt-20 uppercase" title="Author" subtitle="Who writes here." />
 		</div>
 		<div>
-			<ol class="mt-12 flex flex-col divide-y divide-zinc-800 py-8">
+			<ol class="mt-12 flex flex-col divide-y divide-brand-dark/15 py-8">
 				{
 					allAuthors.map((author) => (
-						<li class="w-full py-8 font-mono text-xl font-semibold text-zinc-800 hover:text-black md:text-2xl ">
+						<li class="w-full py-8 font-mono text-xl font-semibold text-brand-dark hover:text-brand-accent md:text-2xl ">
 							<a href={translatePath(`/author/${author.slug}`)} class="flex w-full items-center justify-between">
 								{author.data.name}{" "}
 								<span class="ml-auto">

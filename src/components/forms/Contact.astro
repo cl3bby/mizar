@@ -10,14 +10,11 @@ const translatePath = useTranslatedPath(lang);
 
 <section class="isolate px-6 py-24 sm:py-32 lg:px-8">
 	<div class="pointer-events-none absolute inset-x-0 top-[-10rem] -z-10 flex justify-center overflow-hidden sm:top-[-20rem]" aria-hidden="true">
-		<div class="h-[36rem] w-[72rem] max-w-none rounded-full bg-[radial-gradient(closest-side,rgba(162,212,160,0.30),transparent)]"></div>
+		<div class="h-[36rem] w-[72rem] max-w-none rounded-full bg-[radial-gradient(closest-side,rgba(189,141,67,0.18),transparent)]"></div>
 	</div>
 	<div class="mx-auto">
 		<Title class="pb-10 pt-20 uppercase" title={t("contact.title")} subtitle={t("contact.subtitle")} />
-		<form
-			action="https://formsubmit.co/hello@caleb.rocks"
-			method="POST"
-			class="mx-auto max-w-2xl pt-12 lg:pt-20">
+		<form action="https://formsubmit.co/hello@caleb.rocks" method="POST" class="mx-auto max-w-2xl pt-12 lg:pt-20">
 			<input type="hidden" name="_subject" value="New website enquiry - caleb.rocks" />
 			<input type="hidden" name="_template" value="table" />
 			<input type="hidden" name="_next" value="https://caleb.rocks/contact?sent=1" />
@@ -25,7 +22,7 @@ const translatePath = useTranslatedPath(lang);
 			<p class="hidden" aria-hidden="true">
 				<label>Don't fill this in: <input type="text" name="_honey" tabindex="-1" autocomplete="off" /></label>
 			</p>
-			<p id="form-success" class="mb-8 rounded-lg bg-emerald-100 px-4 py-3 text-emerald-900" hidden>
+			<p id="form-success" class="mb-8 rounded-lg bg-brand-dark/10 px-4 py-3 text-brand-dark" hidden>
 				Thanks — your enquiry has been sent. I'll get back to you shortly.
 			</p>
 			<div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
@@ -46,21 +43,44 @@ const translatePath = useTranslatedPath(lang);
 					<input type="tel" name="phone" id="phone" autocomplete="tel" />
 				</div>
 				<div class="form-field sm:col-span-2">
+					<label for="interest" class="form-label">What are you after?</label>
+					<select class="form-select" name="interest" id="interest">
+						<option value="" selected>Select what you're after (optional)</option>
+						<option value="Essential website">A new website - Essential ($1,950)</option>
+						<option value="Signature website">A new website - Signature ($2,750)</option>
+						<option value="Custom Build">A custom build</option>
+						<option value="Redesign or rebuild">A redesign of my current site</option>
+						<option value="Website Care">Website Care Package</option>
+						<option value="Not sure yet">Not sure yet - let's talk</option>
+					</select>
+				</div>
+				<div class="form-field sm:col-span-2">
+					<label for="budget" class="form-label">Budget</label>
+					<select class="form-select" name="budget" id="budget">
+						<option value="" selected>Select your budget (optional)</option>
+						<option value="$1000 to $2000">$1000 to $2000</option>
+						<option value="$2000 to $4000">$2000 to $4000</option>
+						<option value="$4000+">$4000+</option>
+						<option value="Less than $1000">Less than $1000</option>
+						<option value="Not sure yet">Not sure yet</option>
+					</select>
+				</div>
+				<div class="form-field sm:col-span-2">
 					<label for="message" class="form-label">{t("contact.message")}*</label>
 					<textarea name="message" id="message" rows="4" required></textarea>
 				</div>
 				<div class="flex gap-x-4 sm:col-span-2">
-					<label class="text-sm leading-6 text-gray-600" id="switch-1-label">
+					<label class="text-sm leading-6 text-brand-dark/70" id="switch-1-label">
 						{t("contact.agree")}
-						<a href="/privacy" class="font-semibold text-slate-800">privacy policy</a>.
+						<a href="/privacy" class="font-semibold text-brand-dark">privacy policy</a>.
 					</label>
 				</div>
 			</div>
 			<div class="flex pt-10">
-				<div class="squircle-bg rounded-lg bg-zinc-900">
+				<div class="squircle-bg rounded-lg bg-brand-dark">
 					<button
 						type="submit"
-						class="flex h-10 w-full max-w-52 flex-1 items-center justify-center px-4 py-2 text-xl text-slate-200 transition-all hover:text-white sm:w-auto md:font-bold lg:h-10">
+						class="flex h-10 w-full max-w-52 flex-1 items-center justify-center px-4 py-2 text-xl text-brand-light transition-all hover:text-brand-accent sm:w-auto md:font-bold lg:h-10">
 						{t("contact.send")}
 					</button>
 				</div>
@@ -70,18 +90,26 @@ const translatePath = useTranslatedPath(lang);
 </section>
 
 <style>
-
 	.form-field {
 		@apply block;
 	}
 
 	.form-label {
-		@apply flex pl-1 text-sm font-semibold leading-6 text-gray-900;
+		@apply flex pl-1 text-sm font-semibold leading-6 text-brand-dark;
 	}
 
 	input,
+	select,
 	textarea {
-		@apply pointer-events-auto relative m-0 w-full cursor-text rounded-lg border-0 bg-slate-200 px-5 py-2 text-xl font-normal not-italic outline-none placeholder:text-gray-400 focus:ring-slate-500;
+		@apply pointer-events-auto relative m-0 w-full cursor-text rounded-lg border-0 bg-white/60 px-5 py-2 text-xl font-normal not-italic outline-none placeholder:text-brand-dark/40 focus:border-brand-accent focus:ring-brand-accent;
+	}
+
+	select {
+		@apply cursor-pointer appearance-none pr-12;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%23153834' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+		background-position: right 1rem center;
+		background-repeat: no-repeat;
+		background-size: 1rem 1rem;
 	}
 </style>
 

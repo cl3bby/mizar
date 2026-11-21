@@ -11,27 +11,38 @@ const translatePath = useTranslatedPath(lang);
 	<div class="relative flex-grow"></div>
 	<div class="relative grid grid-cols-6 gap-y-20 lg:grid-cols-12 lg:text-xl">
 		<div class="col-span-6 col-start-1 grid grid-cols-6 gap-6 lg:col-span-8">
+			<!-- <div class="col-span-2 col-start-4 flex flex-col gap-2 lg:col-span-3">
+				<label class="font-light text-brand-dark/85"><i>contacts</i></label>
+				<a href="mailto:hello@caleb.rocks">hello@caleb.rocks</a>
+				<a href="tel:+61451447973">+61 451 447 973</a><br>
+				<a href="https://wa.me/61451447973?text=I'm%20interested%20in%20getting%20a%20website%20setup.%20Can%20we%20discuss%20scope%20and%20pricing?" target="_blank" rel="noopener">Whatsapp</a>
+				<a href="https://m.me/caleb.rocks?text=I'm%20interested%20in%20getting%20a%20website%20setup.%20Can%20we%20discuss%20scope%20and%20pricing?" target="_blank" rel="noopener">Messenger</a>
+			</div> -->
 			<div class="col-span-2 col-start-4 flex flex-col gap-2 lg:col-span-3">
-				<a href="mailto:hello@caleb.rocks">Email</a>
+				<label class="font-light text-brand-dark/85"><i>socials</i></label>
+				<a href="mailto:hello@caleb.rocks">hello@caleb.rocks</a>
+				<a href="https://www.facebook.com/caleb.rocks" target="_blank" rel="noopener">Facebook</a>
+				<a href="https://www.linkedin.com/in/cl3bby/" target="_blank" rel="noopener">LinkedIn</a>
 				<a href="https://github.com/cl3bby" target="_blank" rel="noopener">GitHub</a>
 			</div>
 			<div class="col-span-3 row-start-1 lg:col-span-2 lg:col-start-4 lg:row-start-auto">
 				<div class="flex flex-col gap-2">
+					<label class="font-light text-brand-dark/85"><i>menu</i></label>
 					<a href={translatePath("/")}>Home</a>
 					<a href={translatePath("/blog/")}>Blog</a>
-					<a href={translatePath("/tags/")}>Tags</a>
+					<!-- <a href={translatePath("/tags/")}>Tags</a> -->
 					<a href={translatePath("/contact/")}>{t("contacts")}</a>
 					<a href={translatePath("/terms/")}>Terms</a>
 					<a href={translatePath("/privacy/")}>Privacy Policy</a>
-					<a href={translatePath("/rss.xml")}>RSS</a>
+					<!-- <a href={translatePath("/rss.xml")}>RSS</a> -->
 				</div>
 			</div>
-			<div class="col-span-3 mt-10 lg:col-start-4">
+			<!-- <div class="col-span-3 mt-10 lg:col-start-4">
 				<div class="relative flex flex-col overflow-hidden"></div>
 				<div class="relative mt-1 flex h-8 flex-col overflow-hidden">
 					<a href="mailto:hello@caleb.rocks" class="block cursor-pointer overflow-hidden">hello@caleb.rocks</a>
 				</div>
-			</div>
+			</div> -->
 		</div>
 		<div class="col-span-6 row-start-1 text-5xl leading-tight lg:col-span-4 lg:row-start-auto lg:text-6xl">
 			<a href={translatePath("/contact/")} class="hover:underline">
@@ -40,12 +51,13 @@ const translatePath = useTranslatedPath(lang);
 		</div>
 	</div>
 	<div class="relative mt-4 flex w-full items-end justify-between gap-y-4 text-sm lg:text-xl lg:font-normal">
-		<div>©2026 caleb.rocks</div>
-		<!-- https://codepen.io/fliseno1k/pen/WNboLBy -->
+		<div>©2026 caleb.rocks ❤️</div>
+
+		<!-- Scroll Up Arrow -->
 		<button
 			id="go-top-button"
 			aria-label="Go to Top"
-			class="fill-transparent transition-colors duration-300 hover:fill-black hover:text-white"
+			class="fill-transparent transition-colors duration-300 hover:fill-brand-dark hover:text-brand-light"
 			data-cursor-hover
 			data-cursor-parallax>
 			<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
@@ -54,8 +66,6 @@ const translatePath = useTranslatedPath(lang);
 				</g>
 			</svg>
 		</button>
-
-		<!-- Scroll Up Arrow -->
 	</div>
 </footer>
 

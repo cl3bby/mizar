@@ -29,13 +29,13 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 <section>
 	<div class="mx-auto px-8 py-24 md:px-12 lg:pt-32 2xl:max-w-7xl">
 		<div>
-			<Title class="pb-10 pt-20 uppercase" title="Tags" subtitle="Browse notes by topic." />
+			<Title class="pb-10 pt-20 uppercase" title="Tags" subtitle="Browse posts by topic." />
 		</div>
 		<div>
-			<ol class="mt-12 flex flex-col divide-y divide-zinc-800 py-8">
+			<ol class="mt-12 flex flex-col divide-y divide-brand-dark/15 py-8">
 				{
 					tags.map((tag) => (
-						<li class="w-full py-8 font-mono text-xl font-semibold text-zinc-800 hover:text-black md:text-2xl ">
+						<li class="w-full py-8 font-mono text-xl font-semibold text-brand-dark hover:text-brand-accent md:text-2xl ">
 							<a href={translatePath(`/tags/${tag}`)} class="flex w-full items-center justify-between">
 								{tag}{" "}
 								<span class="ml-auto">

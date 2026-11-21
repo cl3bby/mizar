@@ -26,6 +26,16 @@ const allProjects = (await getCollection("projects"))
 	.sort((a, b) => Number(b.data.pubDate) - Number(a.data.pubDate));
 ---
 
+<div class:list={["flex md:justify-center", className]}>
+	<div class="inline-flex flex-col gap-2">
+		<div class="inline-flex items-center gap-2">
+			<span class="font-mono text-xs font-semibold uppercase tracking-wide">Some of my</span>
+		</div>
+		<h1 class="font-display text-5xl font-extrabold sm:text-6xl md:text-7xl lg:text-9xl">Featured Work</h1>
+		<div class="hidden h-1 w-20 bg-brand-accent md:block"></div>
+	</div>
+</div>
+
 <section id="projects" class:list={["section work-preview-section home-dark-section py-12", className]}>
 	<div class="col-span-12 col-start-1 mx-auto max-w-7xl">
 		<h2 class="sr-only">{t("projects")}</h2>
@@ -88,8 +98,8 @@ const allProjects = (await getCollection("projects"))
 				immediateRender: false,
 			},
 			ease: "none",
-			backgroundColor: "#18181b",
-			color: "#fff",
+			backgroundColor: "#153834",
+			color: "#d8e4de",
 		});
 
 		if (window.innerWidth >= 768) {
